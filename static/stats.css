@@ -1,0 +1,128 @@
+/* ==============================
+   Sentiment Analysis – layout
+============================== */
+#sentimentAnalysisSection {
+  background-color: #f8f9fa;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+#sentimentAnalysisSection h2,
+#sentimentAnalysisSection h5 {
+  font-weight: 600;
+  color: #333;
+}
+
+#sentimentAnalysisSection p {
+  font-size: 0.95rem;
+  color: #555;
+  margin-top: 0.5rem;
+}
+
+/* ==============================
+   Charts – fixed height, responsive width
+   (Chart.js: options.maintainAspectRatio=false)
+============================== */
+#sentimentAnalysisSection canvas {
+  display: block;
+  width: 100%;
+  max-width: 900px;                 /* δεν ξεχειλώνει σε μεγάλα viewports */
+  height: 220px !important;         /* σταθερό ύψος */
+  min-height: 220px !important;
+  max-height: 220px !important;
+  margin: 0 auto;
+  min-width: 560px;
+}
+
+/* Emotion chart λίγο ψηλότερο */
+#sentimentEmotionChart {
+  height: 280px !important;
+  min-height: 280px !important;
+  max-height: 280px !important;
+  min-width: 600px;                 /* λίγο πιο πλατύ επειδή έχει περισσότερα labels */
+}
+
+
+#emotionHashtagChart {
+  min-width: 700px;
+}
+
+#hashtagRatioChart { min-width: 560px; }
+#toxHistChart      { min-width: 560px; }
+
+/* ==============================
+   Stat cards – fixed size grid
+============================== */
+#infoCardsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 2rem;
+}
+
+#infoCardsContainer .card {
+  width: 240px;           /* fixed width */
+  height: 130px;          /* fixed height */
+  background: #f4f9ff;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  text-align: center;
+}
+
+#infoCardsContainer .card:hover {
+  transform: translateY(-3px);
+}
+
+#infoCardsContainer .card .card-body {
+  padding: 16px;
+  width: 100%;
+}
+
+#infoCardsContainer .card-title {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 6px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#infoCardsContainer .card-text {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #1a73e8;
+  margin: 0;
+}
+
+/* ==============================
+   Small screens tweaks
+============================== */
+@media (max-width: 420px) {
+  #infoCardsContainer .card {
+    width: 200px;
+    height: 120px;
+  }
+
+  /* σε πολύ στενά viewports -> τα charts λίγο χαμηλότερα */
+  #sentimentAnalysisSection canvas {
+    height: 200px !important;
+    min-height: 200px !important;
+    max-height: 200px !important;
+  }
+  #sentimentEmotionChart {
+    height: 240px !important;
+    min-height: 240px !important;
+    max-height: 240px !important;
+  }
+}

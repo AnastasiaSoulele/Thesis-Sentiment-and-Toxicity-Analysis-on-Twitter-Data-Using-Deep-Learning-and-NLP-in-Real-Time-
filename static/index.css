@@ -1,0 +1,605 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+a{
+  text-decoration: none;
+}
+ 
+li{
+  list-style: none;
+}
+
+body{
+  font-family: 'Outfit', serif;
+}
+
+.wrapper{
+  display:flex;
+}
+
+.main{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  transition: all 0.25s ease-in-out;
+  background-color: #fff;
+}
+
+#sidebar{
+  width: 90px;
+  min-width: 90px;
+  background-color: #0b0f19;
+  display: fixed;
+  transition: all 0.25s ease-in-out;
+}
+
+#sidebar.expand{
+  width: 260px;
+  min-width: 260px;
+}
+
+#sidebar:not(.expand) .sidebar-logo,
+#sidebar:not(.expand) a.sidebar-link span{
+  display: none;
+}
+
+.toggle-btn{
+  width: 30px;
+  height: 30px;
+  color: #fff;
+  border-radius: 0.425rem;
+  font-size:18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #323c55;
+
+}
+
+.toggle-btn i{
+  color:#fff;
+
+}
+
+#sidebar.expand .sidebar-logo,
+#sidebar.expand a.sidebar-link span{
+  animation: fadeIn.25s ease;
+}
+
+@keyframes fadeIn{
+  0%{
+    opacity: 0;
+  }
+
+  100%{
+    opacity: 1;
+  }
+}
+
+
+.sidebar-logo a{
+  color: #fff;
+  font-size: 1.15rem;
+  font-weight:600;
+}
+
+.sidebar-nav{
+  padding: 0.7rem 0;
+  flex: 11 auto;
+  z-index: 10;
+}
+
+a.sidebar-link{
+  padding: .625rem 1.625rem;
+  color:#fff;
+  display:block;
+  white-space:nowrap;
+  font-weight: 700;
+  border-left:3px solid transparent;
+}
+
+.sidebar-link i,
+.dropdown-item i{
+  font-size:1.1rem;
+  margin-right: .75rem;
+}
+
+a.sidebar-link:hover{
+  background-color: rgba(255, 255, 255, .075);
+  border-left:3px solid #3b7ddd;
+}
+
+.sidebar-item{
+  position: relative;
+}
+
+.sidebar-dropdown .sidebar-link i {
+  margin-left: 1.2rem;
+  font-size: 1rem;
+}
+
+#sidebar:not(.expand) .sidebar-item .sidebar-dropdown{
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 90px;
+  background-color: #0e2238 ;
+  padding: 0;
+  min-width: 15rem;
+  display: none;
+}
+
+#sidebar:not(.expand) .sidebar-item:hover .has-drpown+.sidebar-dropdown{
+  display: block;
+  max-height: 15rem;
+  width:100%;
+  opacity: 1;
+}
+
+
+
+#sidebar.expand .sidebar-link .sidebar-dropdown{
+  left: 130px;
+}
+
+
+#sidebar.expand .sidebar-link[data-bs-toggle="collapse"]::after {
+  content: "";
+  display: inline-block;
+  border: solid white;
+  border-width: 0 .075rem .075rem 0;
+  padding: 4px;
+  position: absolute;
+  right: 1.5rem;
+  top: 1rem;
+  transform: rotate(-135deg); /* Πάνω */
+  transition: all 0.2s ease-out;
+}
+
+#sidebar.expand .sidebar-link[data-bs-toggle="collapse"].collapsed::after {
+  transform: rotate(45deg); /* Κάτω */
+  transition: all 0.2s ease-out;
+}
+
+
+.sidebar-dropdown .dropdown-link{
+  padding-left: 3rem;
+  position:relative;
+  transition:all 0.5s;
+}
+
+.sidebar-dropdown a.sidebar-link:hover{
+  background:transparent;
+  border-left: 1.25px solid transparent;
+  padding-left: 1.25rem;
+  color: #7277f2;
+
+}
+
+#realTimeXToggle::after {
+  display: none !important;
+}
+
+#liveFeedSection {
+  padding-top: 40px; 
+}
+
+.live-tweet-box {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Στοίχιση αριστερά */
+  gap: 20px;
+  padding: 20px;
+  background: #f8f8f8;
+  border-radius: 8px;
+  max-height: 400px;
+  overflow-y: auto;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+
+
+/*Κουμπί*/
+.btn-mini-analyze {
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  padding: 6px 18px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+  display: block;
+  margin: 0 auto;  /* Κεντράρει το κουμπί */
+  width: fit-content;  /* Περιορίζει το πλάτος στο περιεχόμενο */
+}
+
+.btn-mini-analyze:hover {
+  background-color: #333;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+.modern-x-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  animation: fadeInX 1.7s ease-in-out;
+}
+
+.x-highlight {
+  font-size: 3rem;
+  font-weight: 900;
+  color: #000;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.25);
+  letter-spacing: -1px;
+}
+
+.yourself-highlight {
+  color: #111;
+  font-weight: 600;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.15);
+}
+
+@keyframes fadeInX {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Styles */
+.chat-box {
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.05);
+}
+
+
+.bot-msg {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;   
+   
+}
+
+
+.bot-msg span {
+  font-weight: 600;
+  color: #444;
+  margin-bottom: 5px;
+}
+
+
+.bot-msg p {
+  align-self: flex-end;
+  background-color: #000;
+  color: white;
+  padding: 10px 14px;
+  border-radius: 18px;
+  max-width: 80%;
+}
+
+#bot-response {
+  text-align: left !important;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+#bot-response p,
+#bot-response strong,
+#bot-response em,
+#bot-response span {
+  align-self: flex-start !important;
+  text-align: left !important;
+  margin: 4px 0;
+}
+
+
+section {
+  transition: all 0.3s ease;
+}
+
+.live-tweet {
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.75rem;
+  background-color: #fff;
+  border-radius: 6px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+}
+
+
+.live-tweet:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.live-tweet p {
+  margin-bottom: 0.75rem;
+  font-size: 1rem;
+  line-height: 1.4;
+  color: #333;
+}
+
+.live-tweet strong {
+  color: #000;
+}
+
+.live-tweet .btn-mini-analyze {
+  margin-top: 0.4rem;
+}
+
+
+.wide-card-section {
+  padding: 60px 0;
+  background-color: #f5f5f5;
+}
+
+
+.custom-card {
+  border-radius: 18px;
+  background-color: #fff;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  max-width: 100%;
+}
+
+/* Κάρτα μεγαλύτερη σε πλάτος */
+#userInputSection .card {
+  max-width: 100%;
+  border-radius: 18px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  padding: 30px;
+}
+
+/* Πλατύ textarea */
+#tweetInput {
+  width: 100%;
+  min-height: 120px;
+  font-size: 1.1rem;
+  padding: 18px;
+  border-radius: 10px;
+  resize: vertical;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* === Emotion Chart Styling === */
+#emotionChartContainer {
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  margin-top: 20px;
+  transition: all 0.3s ease-in-out;
+}
+
+#emotionChartContainer h5 {
+  font-weight: 600;
+  font-size: 1.2rem;
+  margin-bottom: 16px;
+  color: #333;
+}
+
+#emotionChart {
+  width: 100% !important;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+
+.small-chat-box {
+  max-width: 100%;
+  padding: 10px 12px;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  color: white;
+  font-size: 14px;
+  margin-top: 8px;
+}
+
+/* Κείμενο από το bot */
+.small-bot-msg {
+  font-size: 13.5px;
+  line-height: 1.4;
+}
+
+/* Ετικέτα SentimentX */
+.small-label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 6px;
+}
+
+/* Κείμενο απάντησης */
+.response-text {
+  font-size: 13.2px;
+  white-space: pre-line;
+}
+
+/* Chart container για responsive μέγεθος */
+.chart-wrapper {
+  margin-top: 12px;
+  width: 100%;
+  max-width: 300px;
+  height: 200px;  /* αυξημένο ύψος */
+}
+
+/* === Modular Tweet Card Styling === */
+.tweet-card {
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 12px 16px;
+  margin-bottom: 14px;
+  background-color: #ffffff;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+  transition: box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.tweet-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
+}
+
+.tweet-meta {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tweet-text {
+  font-size: 1rem;
+  color: #333;
+}
+
+/* === Toxicity coloring based on class === */
+.toxicity-score {
+  font-weight: bold;
+  padding: 4px 10px;
+  border-radius: 6px;
+  background-color: #e0e0e0;
+  font-size: 0.85rem;
+}
+
+.toxicity-score.low {
+  color: #2e7d32;
+  background-color: #e8f5e9;
+}
+
+.toxicity-score.medium {
+  color: #ef6c00;
+  background-color: #fff3e0;
+}
+
+.toxicity-score.high {
+  color: #c62828;
+  background-color: #ffebee;
+}
+
+
+@media (max-width: 576px) {
+  .chart-wrapper {
+    height: 180px;  
+  }
+}
+
+
+#distilbertSection .card {
+  width: 100%;
+  max-width: 900px;
+  margin: 1rem auto;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1.2rem;
+  padding: 1.2rem;
+  background-color: white;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease;
+}
+
+#distilbertSection .card:hover {
+  transform: translateY(-3px);
+}
+
+#distilbertSection .card img {
+  flex: 0 0 180px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+#distilbertSection .card-content {
+  flex: 1;
+}
+
+#distilbertSection .card-content h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.25rem;
+  color: #2c3e50;
+}
+
+#distilbertSection .card-content p {
+  font-size: 0.95rem;
+  color: #4a4a4a;
+  line-height: 1.5;
+}
+
+#distilbertSection .btn {
+  display: block;
+  margin: 1rem auto 0 auto;
+  width: fit-content;
+  padding: 0.5rem 1.5rem;
+  font-weight: 500;
+  background-color: #009688;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  transition: background-color 0.3s;
+  text-align: center;
+}
+
+
+#distilbertSection .btn:hover {
+  background-color: #00796b;
+}
+
+
+#trainingStatsSection .card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.07);
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#trainingStatsSection .card-content h3 {
+  margin-bottom: 0.75rem;
+  font-size: 1.3rem;
+  color: #2c3e50;
+}
+
+#distilbertSection .card h5 {
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  gap: 0.5rem;
+  flex-wrap: nowrap;
+}
+
+
+#trainingStatsSection .card-content p,
+#trainingStatsSection .card-content li {
+  font-size: 1rem;
+  color: #4a4a4a;
+  line-height: 1.6;
+}
+
+#trainingStatsSection ul {
+  padding-left: 1.2rem;
+  list-style-type: disc;
+}
+
+#trainingStatsSection .blockquote {
+  padding-left: 1rem;
+  border-left: 4px solid #999;
+  color: #555;
+  font-style: italic;
+}
