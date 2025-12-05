@@ -1,0 +1,2 @@
+# Thesis-Sentiment-and-Toxicity-Analysis-on-Twitter-Data-Using-Deep-Learning-and-NLP-in-Real-Time-
+This repository contains a full pipeline for real-time sentiment and toxicity analysis on Twitter data using modern NLP techniques and deep learning models. The project leverages a fine-tuned DistilBERT model for sentiment classification and integrates additional toxicity detection to enhance the interpretation of social media content.
